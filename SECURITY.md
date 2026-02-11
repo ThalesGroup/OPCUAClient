@@ -1,45 +1,99 @@
-Describe here all the security policies in place on this repository to help your contributors to handle security issues efficiently.
-
-## Goods practices to follow
-
-:warning:**You must never store credentials information into source code or config file in a GitHub repository**
-- Block sensitive data being pushed to GitHub by git-secrets or its likes as a git pre-commit hook
-- Audit for slipped secrets with dedicated tools
-- Use environment variables for secrets in CI/CD (e.g. GitHub Secrets) and secret managers in production
 
 # Security Policy
 
+## Security Overview
+
+This repository takes security seriously. We encourage all contributors and users to follow the policies and best practices below to ensure the ongoing protection of user data and integrity of the code base.
+
+---
+
+## Good Practices to Follow
+
+:warning: **Never store credential information, passwords, private keys, or sensitive configuration data in source code or config files within the repository.**
+
+- **Prevent sensitive data from being pushed to GitHub:**  
+  - Use tools such as `git-secrets`, `truffleHog`, or `gitleaks` as pre-commit hooks to block credentials or secrets from entering the code base.
+- **Regularly audit for accidental secret leakage:**  
+  - Run automated scans for secrets after every major commit or before release.
+- **Use environment variables and secret managers:**  
+  - Configure secrets in CI/CD pipelines using GitHub Secrets, ENV variables, or dedicate secrets managers like AWS Secrets Manager or HashiCorp Vault.
+- **Review dependencies for vulnerabilities:**  
+  - Enable Dependabot or similar services to automatically monitor and patch security issues in dependencies.
+
+---
+
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are currently being supported with security updates.
+This project supports the following versions with security updates. Unsupported versions will not receive security patches.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 1.5     | :white_check_mark: |
+| < 1.4   | :x:                |
+
+---
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
-Tell them where to go, how often they can expect to get an update on a reported vulnerability, what to expect if the vulnerability is accepted or declined, etc.
+If you believe you have discovered a security vulnerability in this repository:
 
-You can ask for support by contacting oss@thalesgroup.com
+1. **Do not publicly share details** on GitHub issues, pull requests, or discussions.
+2. **Contact us directly:**  
+   Email: [oss@thalesgroup.com](mailto:oss@thalesgroup.com)
+3. **What to expect:**  
+   - We will acknowledge receipt within 5 business days.
+   - You will receive updates as we investigate and resolve the issue.
+   - Once remediated, we may credit the reporter (unless requested otherwise) and publicly release a patch with a summary of the fix.
 
-## Disclosure policy
+---
 
-Define the procedure for what a reporter who finds a security issue needs to do in order to fully disclose the problem safely, including who to contact and how.
+## Disclosure Policy
 
-## Security Update policy
+- Please report potential security issues privately to oss@thalesgroup.com.
+- Include as much detail as possible: affected component, steps to reproduce, impact assessment, and potential mitigations.
+- We will assess, validate, and provide a resolution timeline if confirmed.
+- If necessary, coordinate public disclosure with the reporter once a fix is available, to ensure safe remediation.
 
-Define how you intend to update users about new security vulnerabilities as they are found.
+---
 
-## Security related configuration
+## Security Update Policy
 
-Settings users should consider that would impact the security posture of deploying this project, such as HTTPS, authorization and many others.
+- Security advisories will be published under the repository's "Security" tab.
+- Users are advised to subscribe to releases and security advisories for timely notifications.
+- Patches for critical vulnerabilities will be released as hotfixes; moderate and low severity updates will follow the regular release schedule.
 
-## Known security gaps & future enhancements
+---
 
-Security improvements you haven’t gotten to yet.
-Inform users those security controls aren’t in place, and perhaps suggest they contribute an implementation
+## Security-related Configuration
+
+When deploying this project, consider the following configuration for optimal protection:
+
+- **HTTPS/TLS:**  
+  - Ensure all endpoints communicate securely with HTTPS.
+- **Authentication and Authorization:**  
+  - Implement granular access controls, least privilege principles, and role-based access.
+- **Secrets Management:**  
+  - Store secrets outside code (see best practices above).
+- **Logging & Monitoring:**  
+  - Enable sufficient logging for security events and monitor regularly for suspicious activity.
+- **Dependencies:**  
+  - Keep all dependencies up to date and monitor for disclosed security vulnerabilities.
+
+---
+
+## Known Security Gaps & Future Enhancements
+
+The following areas have been identified for further security improvements:
+
+- [ ] Improved integration with advanced secrets scanning tools.
+- [ ] Automated security testing in CI/CD.
+- [ ] Comprehensive input validation and sanitation across all interfaces.
+- [ ] Expansion of role-based access controls.
+- [ ] Enhanced audit trails for user actions.
+
+**If you wish to contribute an implementation of any of these enhancements, please open an issue or contact the maintainers directly.**
+
+---
+
+**Questions or concerns?**  
+Contact: [oss@thalesgroup.com](mailto:oss@thalesgroup.com)
