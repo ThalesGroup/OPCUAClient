@@ -1,4 +1,19 @@
-# Thales OPCUAClient documentation
+## Get started
+
+OPCUAClient project purpose it to connect to and interact with OPC UA (Open Platform Communications Unified Architecture) servers. 
+The application enables industrial systems, devices, and software to communicate reliably and securely, supporting real-time data acquisition, monitoring, and control across heterogeneous environments.
+
+## Documentation
+
+Documentation is available at doc/index.html
+
+You can use [GitHub pages](https://guides.github.com/features/pages/) to create your documentation.
+
+See an example here : https://github.com/ThalesGroup/ThalesGroup.github.io
+
+## Contributing
+
+If you are interested in contributing to the OPCUAClient project, start by reading the [Contributing guide](/CONTRIBUTING.md).
 
 ## License
 
